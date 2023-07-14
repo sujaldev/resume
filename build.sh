@@ -18,5 +18,5 @@ IMAGES=$(
 )
 
 for IMAGE in $IMAGES; do
-  curl -X PURGE "$IMAGE"
+  curl -X PURGE "${IMAGE::-1}"
 done
