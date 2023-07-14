@@ -27,21 +27,17 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+    container:
+      image: texlive/texlive:latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Cache Docker images
-        uses: ScribeMD/docker-cache@0.3.3
-        with:
-          key: docker-${{ runner.os }}-${{ hashFiles('.github/workflows/build.yaml') }}
+      - name: Install dependencies
+        run: |
+          apt-get update -y && apt-get upgrade -y
+          apt-get install poppler-utils -y
       - name: Build
-        uses: addnab/docker-run-action@v3
-        with:
-          image: texlive/texlive:latest
-          options: -v ${{ github.workspace }}:/work
-          run: |
-            apt-get update -y && apt-get upgrade -y && apt-get install poppler-utils -y
-            cd /work && ./build.sh
+        run: ./build.sh
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
