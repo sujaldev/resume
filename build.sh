@@ -9,6 +9,10 @@ find ./* ! -name "resume.pdf" -delete
 # Build Preview Images
 pdftoppm resume.pdf preview -png
 
+# Setup index.html
+echo "<html><head><meta http-equiv=refresh content=0; url=\"https://sujaldev.github.io/resume/resume.pdf\">" \
+  >>index.html
+
 # Clear GitHub image cache
 IMAGES=$(
   curl -s "https://github.com/sujaldev/resume/blob/main/README.md" | grep --color=never -Poi "https:\/\/camo[^\"]*"
