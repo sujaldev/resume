@@ -10,8 +10,7 @@ find ./* ! -name "resume.pdf" -delete
 pdftoppm resume.pdf preview -png
 
 # Setup index.html
-echo "<html><head><meta http-equiv=refresh content=\"0; url=https://sujaldev.github.io/resume/resume.pdf\">" \
-  >>index.html
+cp ../index.html .
 
 # Clear GitHub image cache
 IMAGES=$(
