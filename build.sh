@@ -1,3 +1,6 @@
+create_deployment "https://resume.sujal.dev"
+update_deployment in_progress
+
 # Build PDF
 mkdir -p ./build/resume
 pdflatex -interaction=nonstopmode -output-format=pdf -output-directory=./build/resume ./src/resume.tex
@@ -14,6 +17,5 @@ IMAGES=$(
   curl -s "https://github.com/sujaldev/resume/blob/main/README.md" | grep --color=never -Poi "https:\/\/camo[^\"]*"
 )
 
-for IMAGE in $IMAGES; do
-  curl -X PURGE "${IMAGE::-1}"
-done
+clear_image_cache
+update_deployment success
