@@ -1,7 +1,7 @@
 # Build PDF
-mkdir -p ./build
-pdflatex -interaction=nonstopmode -output-format=pdf -output-directory=./build ./src/resume.tex
-cd ./build || exit
+mkdir -p ./build/resume
+pdflatex -interaction=nonstopmode -output-format=pdf -output-directory=./build/resume ./src/resume.tex
+cd ./build/resume || exit
 
 # Clean up build files
 find ./* ! -name "resume.pdf" -delete
