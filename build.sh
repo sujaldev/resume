@@ -1,16 +1,13 @@
 # Build PDF
-mkdir -p ./out
-pdflatex -interaction=nonstopmode -output-format=pdf -output-directory=./out ./src/resume.tex
-cd ./out || exit
+mkdir -p ./build
+pdflatex -interaction=nonstopmode -output-format=pdf -output-directory=./build ./src/resume.tex
+cd ./build || exit
 
 # Clean up build files
 find ./* ! -name "resume.pdf" -delete
 
 # Build Preview Images
 pdftoppm resume.pdf preview -png
-
-# Setup index.html
-cp ../index.html .
 
 # Clear GitHub image cache
 IMAGES=$(
