@@ -1,5 +1,5 @@
-create_deployment "https://resume.sujal.dev"
-update_deployment in_progress
+create_deployment
+update_deployment in_progress "https://resume.sujal.dev"
 
 # Build PDF
 mkdir -p ./build/resume
