@@ -1,13 +1,12 @@
-%! Author = sujal
+%! Author = Sujal Singh
 %! Date = 3/18/23
 
 % Preamble
 \documentclass[11pt]{article}
-\pagenumbering{gobble}
 
 % Packages
 \usepackage{amsmath}
-\usepackage[letterpaper, margin=0.8in, top=0.9in]{geometry}
+\usepackage[letterpaper,vmargin=2cm,hmargin=1.5cm]{geometry}
 \usepackage[
     pdftitle={Sujal Singh - Resume},
     pdfsubject={Resume},
@@ -18,44 +17,39 @@
 \usepackage{tabularray}
 \usepackage{color}
 \usepackage{fontawesome5}
-\usepackage{etoolbox}
 \usepackage{enumitem}
-
-\UseTblrLibrary{varwidth}
 
 %% Fonts
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 
-% Variables
-\newtoggle{lines}
-\togglefalse{lines}
+\pagenumbering{gobble}
+\UseTblrLibrary{varwidth}
+\renewcommand{\labelitemi}{\diamond}
+\renewcommand{\labelitemii}{\textbullet}
 
 % Document
 \begin{document}
-    % -------------------------------------------------- Title -------------------------------------------------- %
-    \noindent
-    \begin{tblr}{width=\textwidth,colspec={Q[l,t]XQ[r,t]},colsep=0pt}
+    \noindent%
+    \begin{tblr}%
+    {colspec={X[3,l,t]X[11,l,t]},colsep=0pt,rowsep=10pt,row{1-4}={rowsep=0pt},cell{1}{2}={r=3,c=1}{r,f},measure=vbox}%
+        % -------------------------------------------------- Info --------------------------------------------------- %
         \href{https://github.com/sujaldev}{\faGithub}
-        \hspace{5pt}
-        \href{https://linkedin.com/in/sujal-singh}{\faLinkedin}
-        \hspace{5pt}
-        \href{https://youtube.com/@sujaldev}{\faYoutube}
-        & &
-        \SetCell[r=2]{f}
+        \hspace{5pt} \href{https://linkedin.com/in/sujal-singh}{\faLinkedin}
+        \hspace{5pt} \href{https://youtube.com/@sujaldev}{\faYoutube}
+        &
         \href{https://sujal.dev/}{\textbf{\Huge Sujal Singh}}
         \\
-        \href{mailto:contact@sujal.dev}{\texttt{contact@sujal.dev}} & &
-    \end{tblr} \\ \\
-    % ----------------------------------------------------------------------------------------------------------- %
-
-
-    \begin{tblr}{colspec={X[3,l,t]X[11,l,t]},colsep=0pt,rowsep=10pt,measure=vbox}
+        \href{mailto:contact@sujal.dev}{\texttt{contact@sujal.dev}}
+        \\
+        \href{tel:+91987654321}{\texttt{+91987654321}}
+        \\ \\
+        % ------------------------------------------------ Projects -------------------------------------------------- %
         \textsc{\Large Projects} &
         \vspace*{-1.5\topsep}
-        \begin{itemize}[label=\diamond,topsep=0pt,leftmargin=2pt]
+        \begin{itemize}[topsep=0pt,leftmargin=15pt]
             \item \textbf{Computer Graphics}
-            \begin{itemize}[label={\tiny\bullet}]
+            \begin{itemize}
                 \item \href{https://github.com/sujaldev/skylon}{\color{blue}Skylon} is a web browser rendering engine
                 written entirely from scratch which implements an HTML parser, a CSS parser and a rendering pipeline.
                 \item \href{https://github.com/sujaldev/lyn}{\color{blue}Lyn} is a tiny programming language built at a
@@ -63,7 +57,7 @@
             \end{itemize}
 
             \item \textbf{Computer Networking}
-            \begin{itemize}[label={\tiny\bullet}]
+            \begin{itemize}
                 \item \textbf{Delhi Police -- Cybersecurity Hackathon}\hfill\textit{February 2024}\newline
                 Secured first position and a reward of 12k INR for developing a filter that actively prevents any client
                 device from accessing potentially malicious URLs. For proxying traffic, the wireguard mode in mitmproxy
@@ -87,23 +81,22 @@
             \href{https://github.com/xserv-labs}{\color{blue}Related Repositories}.\
         \end{itemize}
         \\
+        % ------------------------------------------------- Skills --------------------------------------------------- %
         \textsc{\Large Skills} &
         \vspace*{-1.5\topsep}
-        \begin{itemize}[label=\diamond,topsep=0pt,leftmargin=2pt]
-            \item \textbf{Languages:} Proficient in Python.\ Familiar with HTML/CSS, JavaScript, Bash.
-            \item \textbf{Others:} Git, Docker, Linux Administration \\ & &
+        \begin{itemize}[topsep=0pt,leftmargin=15pt]
+            \item \textbf{Languages:} Proficient in Python.\ Familiar with \LaTeX, HTML/CSS, JavaScript, Bash, OpenSCAD.
+            \item \textbf{Others:} Git, Docker, Linux Administration, Autodesk Fusion \\ & &
         \end{itemize}
         \\
+        % ----------------------------------------------- Education -------------------------------------------------- %
         \textsc{\Large Education} &
         \vspace*{-1.5\topsep}
-        \begin{itemize}[label=\diamond,topsep=0pt,leftmargin=2pt]
-            \item \textbf{University School of Automation \& Robotics} \hfill \textit{September 2023--2027} \\
+        \begin{itemize}[topsep=0pt,leftmargin=15pt]
+            \item \textbf{University School of Automation \& Robotics} \hfill \textit{2023~--~2027} \\
             Bachelor of Technology in Industrial Internet of Things. \hfill GPA: 7.4
-            \item \textbf{St. Xavier's School, Rohini} \hfill \textit{March 2010--June 2022} \\
+            \item \textbf{St. Xavier's School, Rohini} \hfill \textit{2010~--~2022} \\
             Central Board of Secondary Education \hfill Percentage: $82\%$
         \end{itemize}
     \end{tblr}
-    % ----------------------------------------------------------------------------------------------------------- %
-
-
 \end{document}
