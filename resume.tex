@@ -15,13 +15,13 @@
     pdfdisplaydoctitle,
     hidelinks,
 ]{hyperref}
-\usepackage{tabularx}
-\usepackage{array}
-\usepackage{multirow}
-\usepackage{lettrine}
+\usepackage{tabularray}
 \usepackage{color}
 \usepackage{fontawesome5}
 \usepackage{etoolbox}
+\usepackage{enumitem}
+
+\UseTblrLibrary{varwidth}
 
 %% Fonts
 \usepackage[T1]{fontenc}
@@ -31,105 +31,78 @@
 \newtoggle{lines}
 \togglefalse{lines}
 
-
 % Document
 \begin{document}
     % -------------------------------------------------- Title -------------------------------------------------- %
     \noindent
-    \begin{tabularx}{\textwidth}{l X l}
-        \hspace{-4px}
-        \href{https://github.com/sujaldev}{\faGithub} \hspace{0px}
-        \href{https://youtube.com/@sujaldev}{\faYoutube} \hspace{0px}
-        \href{https://gitlab.com/sujaldev}{\faGitlab} \hspace{0px}
-        \href{https://stackexchange.com/users/20453278/sujal?tab=accounts}{\faStackExchange} \hspace{0px}
-        \href{https://stackoverflow.com/users/15007549/sujal-singh}{\faStackOverflow} \hspace{0px}
+    \begin{tblr}{width=\textwidth,colspec={Q[l,t]XQ[r,t]},colsep=0pt}
+        \href{https://github.com/sujaldev}{\faGithub}
+        \hspace{5pt}
+        \href{https://linkedin.com/in/sujal-singh}{\faLinkedin}
+        \hspace{5pt}
+        \href{https://youtube.com/@sujaldev}{\faYoutube}
+        & &
+        \SetCell[r=2]{f}
+        \href{https://sujal.dev/}{\textbf{\Huge Sujal Singh}}
         \\
         \href{mailto:contact@sujal.dev}{\texttt{contact@sujal.dev}} & &
-        \multirow{2}{*}[2ex]{\href{https://sujal.dev}{\textbf{\Huge Sujal Singh}}} \\ \\
-    \end{tabularx} \\ \\
+    \end{tblr} \\ \\
     % ----------------------------------------------------------------------------------------------------------- %
 
 
-    % -------------------------------------------------- Info --------------------------------------------------- %
-    \noindent
-    \begin{tabularx}{\textwidth}{@{}b{90px} b{9px}@{} X@{}}
-        % ---------------------------------------------- Experience --------------------------------------------- %
-        \iftoggle{lines}{\\ \\ \hline \\}{}
+    \begin{tblr}{colspec={X[3,l,t]X[11,l,t]},colsep=0pt,rowsep=10pt,measure=vbox}
+        \textsc{\Large Projects} &
+        \vspace*{-1.5\topsep}
+        \begin{itemize}[label=\diamond,topsep=0pt,leftmargin=2pt]
+            \item \textbf{Computer Graphics}
+            \begin{itemize}[label={\tiny\bullet}]
+                \item \href{https://github.com/sujaldev/skylon}{\color{blue}Skylon} is a web browser rendering engine
+                written entirely from scratch which implements an HTML parser, a CSS parser and a rendering pipeline.
+                \item \href{https://github.com/sujaldev/lyn}{\color{blue}Lyn} is a tiny programming language built at a
+                24-hour hackathon that compiles input code into visual animations.
+            \end{itemize}
 
-        \lettrine[lines=1,loversize=-0.5]{P}ROJECTS & $\diamond$ &
+            \item \textbf{Computer Networking}
+            \begin{itemize}[label={\tiny\bullet}]
+                \item \textbf{Delhi Police -- Cybersecurity Hackathon}\hfill\textit{February 2024}\newline
+                Secured first position and a reward of 12k INR for developing a filter that actively prevents any client
+                device from accessing potentially malicious URLs. For proxying traffic, the wireguard mode in mitmproxy
+                was used and filtering logic is injected via a mitmproxy addon.
+                \href{https://github.com/sujaldev/cerberus}{\color{blue}Source Code}
+                \item \textbf{ACT Fibernet}\hfill\textit{March 2023}\newline
+                Rewarded 10k INR for reporting a severe flaw in the implementation of the ISP's intranet firewall rules,
+                with another two reports that are currently a draft.
+                \href{https://pdf.sujal.dev/act/report.pdf}{\color{blue} Read report}
+            \end{itemize}
 
-        \textbf{Computer Graphics} \hfill \\ & &
-        \vspace{-13pt}
-        \begin{itemize}
-            \item \href{https://github.com/sujaldev/skylon}{\color{blue}Skylon} is a web browser rendering engine
-            written entirely from scratch which implements an HTML parser, a CSS parser and a rendering pipeline.
-            \item \href{https://github.com/sujaldev/lyn}{\color{blue}Lyn} is a tiny programming language built at a
-            24-hour hackathon that compiles input code into visual animations.
+            \item \textbf{3D Printer}\\
+            Won second prize in a science fair for building a 3D printer.\ Currently migrating this printer to a core-xy
+            motion system for which I'm designing the parts from scratch for fun.
+            \href{https://github.com/xserv-labs/cad}{\color{blue}Source Repository}.
+
+            \item \textbf{Home Server}\\
+            My sibling and I maintain several home servers: a firewall, two virtualization nodes running proxmox which
+            serve various purposes including network storage, media management, 3D printer firmware and more, and a
+            Raspberry Pi running KVM over IP for remote management.
+            \href{https://github.com/xserv-labs}{\color{blue}Related Repositories}.\
         \end{itemize}
-
-        \\ & $\diamond$ &
-
-        \textbf{Computer Networking} \\ & &
-        \vspace{-13pt}
-        \begin{itemize}
-            \item \textbf{Delhi Police -- Cybersecurity Hackathon}\hfill\textit{February 2024}\newline
-            Secured first position and a reward of 12k INR for developing a filter that actively prevents any client
-            device from accessing potentially malicious URLs. For proxying traffic, the wireguard mode in mitmproxy
-            was used and filtering logic is injected via a mitmproxy addon.
-            \href{https://github.com/sujaldev/cerberus}{\color{blue}Source Code}
-            \item \textbf{ACT Fibernet}\hfill\textit{March 2023}\newline
-            Rewarded 10k INR for reporting a severe flaw in the implementation of the ISP's intranet firewall rules,
-            with another two reports that are currently under review.
-            \href{https://pdf.sujal.dev/act/report.pdf}{\color{blue} Read report}
+        \\
+        \textsc{\Large Skills} &
+        \vspace*{-1.5\topsep}
+        \begin{itemize}[label=\diamond,topsep=0pt,leftmargin=2pt]
+            \item \textbf{Languages:} Proficient in Python.\ Familiar with HTML/CSS, JavaScript, Bash.
+            \item \textbf{Others:} Git, Docker, Linux Administration \\ & &
         \end{itemize}
-
-        \\ & $\diamond$ &
-
-        \textbf{3D Printer} \hfill \textit{July 2019} \\ & &
-        Won second prize in a science fair for building a 3D printer.\ Currently migrating this printer to a core-xy
-        motion system for which I'm designing the parts from scratch for fun.
-        \href{https://github.com/xserv-labs/cad}{\color{blue}Source Repository}.
-
-        \\ & $\diamond$ &
-
-        \textbf{Home Server} \hfill \textit{July 2019} \\ & &
-        My sibling and I maintain several home servers: a firewall, two virtualization nodes running proxmox which
-        serve various purposes including network storage, media management, 3D printer firmware and more, and a
-        Raspberry Pi running KVM over IP for remote management.
-        \href{https://github.com/xserv-labs}{\color{blue}Related Repositories}.\
-
-        \iftoggle{lines}{\\ \\ \hline \\}{\\ \\}
-        % ------------------------------------------------------------------------------------------------------- %
-
-
-        % ------------------------------------------------ Skills ----------------------------------------------- %
-        \lettrine[lines=1,loversize=-0.5]{S}KILLS & $\diamond$ &
-
-        \textbf{Languages:} Python, HTML/CSS, JavaScript, \LaTeX, Bash, Lyn & &
-
-        \\ & $\diamond$ &
-
-        \textbf{Others:} Git, GitHub, Linux \\ & &
-
-        \iftoggle{lines}{\\ \\ \hline \\}{\\ \\}
-        % ------------------------------------------------------------------------------------------------------- %
-
-
-        % ----------------------------------------------- Education --------------------------------------------- %
-        \lettrine[lines=1,loversize=-0.5]{E}DUCATION & $\diamond$ &
-
-        \textbf{University School of Automation \& Robotics} \hfill \textit{September 2023 -- 2027} \\ & &
-        Bachelor of Technology in Industrial Internet of Things.
-
-        \\ & $\diamond$ &
-
-        \textbf{St. Xavier's School, Rohini} \hfill \textit{March 2010 -- June 2022} \\ & &
-        Studied Physics, Chemistry, Mathematics, Computer Science and English.
-
-        \iftoggle{lines}{\\ \\ \hline \\}{\\ \\}
-        % ------------------------------------------------------------------------------------------------------- %
-
-    \end{tabularx}
+        \\
+        \textsc{\Large Education} &
+        \vspace*{-1.5\topsep}
+        \begin{itemize}[label=\diamond,topsep=0pt,leftmargin=2pt]
+            \item \textbf{University School of Automation \& Robotics} \hfill \textit{September 2023--2027} \\
+            Bachelor of Technology in Industrial Internet of Things. \hfill GPA: 7.4
+            \item \textbf{St. Xavier's School, Rohini} \hfill \textit{March 2010--June 2022} \\
+            Central Board of Secondary Education \hfill Percentage: $82\%$
+        \end{itemize}
+    \end{tblr}
     % ----------------------------------------------------------------------------------------------------------- %
 
 
