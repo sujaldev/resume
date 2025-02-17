@@ -6,7 +6,7 @@
 
 % Packages
 \usepackage{amsmath}
-\usepackage[letterpaper,margin=3cm]{geometry}
+\usepackage[letterpaper,margin=2.5cm]{geometry}
 \usepackage[
     pdftitle={Sujal Singh - Resume},
     pdfsubject={Resume},
@@ -19,7 +19,7 @@
 \usepackage{fontawesome5}
 \usepackage{enumitem}
 
-%% Fonts
+% Fonts
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 
@@ -47,31 +47,39 @@
         % ------------------------------------------------------------------------------------------------------------ %
         % ------------------------------------------------ Projects -------------------------------------------------- %
         % ------------------------------------------------------------------------------------------------------------ %
-        \textsc{\Large Projects} &
+        \textsc{\large Projects} &
         \vspace*{-1.5\topsep}
         \begin{itemize}[topsep=0pt,leftmargin=15pt]
-            \item \textbf{Computer Graphics}
-            \begin{itemize}
-                \item \href{https://github.com/sujaldev/skylon}{\color{blue}Skylon} is a web browser rendering engine
-                written entirely from scratch which implements an HTML parser, a CSS parser and a rendering pipeline.
-                \item \href{https://github.com/sujaldev/lyn}{\color{blue}Lyn} is a tiny programming language built at a
-                24-hour hackathon that compiles input code into visual animations.
+            \item \textbf{Mitmproxy}\\
+            I have made
+            \href{https://github.com/mitmproxy/mitmproxy/commits?author=sujaldev}{\color{blue}several contributions} to
+            \href{https://github.com/mitmproxy/mitmproxy}{\color{blue}mitmproxy}, an
+            interactive TLS-capable intercepting HTTP proxy. Notable contributions:
+            \begin{itemize}[nosep,left=0pt..1em]
+                \item Fixed a bug that would tremendously slow down download speeds for HTTP/2 connections, yielding
+                a 10x increase for most cases.
+                \href{https://github.com/mitmproxy/mitmproxy/pull/7317}{\color{blue}[\#7317]}
             \end{itemize}
 
             % -------------------------------------------------------------------------------------------------------- %
 
-            \item \textbf{Computer Networking}
-            \begin{itemize}
-                \item \textbf{Delhi Police -- Cybersecurity Hackathon}\hfill\textit{February 2024}\newline
-                Secured first position and a reward of 12k INR for developing a filter that actively prevents any client
-                device from accessing potentially malicious URLs. For proxying traffic, the wireguard mode in mitmproxy
-                was used and filtering logic is injected via a mitmproxy addon.
-                \href{https://github.com/sujaldev/cerberus}{\color{blue}Source Code}
-                \item \textbf{ACT Fibernet}\hfill\textit{March 2023}\newline
-                Rewarded 10k INR for reporting a severe flaw in the implementation of the ISP's intranet firewall rules,
-                with another two reports that are currently a draft.
-                \href{https://pdf.sujal.dev/act/report.pdf}{\color{blue} Read report}
-            \end{itemize}
+            \item \textbf{Skylon}\\
+            \href{https://github.com/sujaldev/skylon}{\color{blue}Skylon} is a web browser rendering engine
+            written entirely from scratch which implements an HTML parser, a CSS parser and a rendering pipeline.
+
+            % -------------------------------------------------------------------------------------------------------- %
+
+            \item \textbf{ACT Fibernet}\newline
+            Rewarded 10k INR for reporting a severe flaw in the implementation of the ISP's intranet firewall rules.
+            \href{https://pdf.sujal.dev/act/report.pdf}{\color{blue} Read report}
+
+            % -------------------------------------------------------------------------------------------------------- %
+
+            \item \textbf{Delhi Police -- Cybersecurity Hackathon}\newline
+            Secured first position and a reward of 12k INR for developing a filter that actively prevents any client
+            device from accessing potentially malicious URLs. For proxying traffic, the wireguard mode in mitmproxy
+            was used and filtering logic is injected via a mitmproxy addon.
+            \href{https://github.com/sujaldev/cerberus}{\color{blue}Source Code}
 
             % -------------------------------------------------------------------------------------------------------- %
 
@@ -92,23 +100,23 @@
         % ------------------------------------------------------------------------------------------------------------ %
         % ------------------------------------------------- Skills --------------------------------------------------- %
         % ------------------------------------------------------------------------------------------------------------ %
-        \textsc{\Large Skills} &
+        \textsc{\large Skills} &
         \vspace*{-1.5\topsep}
         \begin{itemize}[topsep=0pt,leftmargin=15pt]
-            \item \textbf{Languages:} Proficient in Python.\ Familiar with \LaTeX, HTML/CSS, JavaScript, Bash, OpenSCAD.
-            \item \textbf{Others:} Git, Docker, Linux Administration, Autodesk Fusion.
+            \item \textbf{Languages:} Proficient in Python.\ Familiar with \LaTeX, HTML/CSS, JavaScript, Bash.
+            \item \textbf{Others:} Git, Docker, Linux Administration.
         \end{itemize}
         \\
         % ------------------------------------------------------------------------------------------------------------ %
         % ----------------------------------------------- Education -------------------------------------------------- %
         % ------------------------------------------------------------------------------------------------------------ %
-        \textsc{\Large Education} &
+        \textsc{\large Education} &
         \vspace*{-1.5\topsep}
         \begin{itemize}[topsep=0pt,leftmargin=15pt]
             \item \textbf{University School of Automation \& Robotics} \hfill \textit{2023~--~2027} \\
-            Bachelor of Technology in Industrial Internet of Things. \hfill GPA: 7.4
+            Bachelor of Technology in Industrial Internet of Things.
             \item \textbf{St. Xavier's School, Rohini} \hfill \textit{2010~--~2022} \\
-            Central Board of Secondary Education \hfill Percentage: $82\%$
+            Central Board of Secondary Education.
         \end{itemize}
     \end{tblr}
 \end{document}
