@@ -6,7 +6,7 @@
 
 % Packages
 \usepackage{amsmath}
-\usepackage[letterpaper,margin=2.5cm]{geometry}
+\usepackage[letterpaper,margin=2cm]{geometry}
 \usepackage[
     pdftitle={Sujal Singh - Resume},
     pdfsubject={Resume},
@@ -18,6 +18,7 @@
 \usepackage{color}
 \usepackage{fontawesome5}
 \usepackage{enumitem}
+\usepackage{tfrupee}
 
 % Fonts
 \usepackage[T1]{fontenc}
@@ -40,7 +41,7 @@
         \hspace{5pt} \href{https://linkedin.com/in/sujal-singh}{\faLinkedin}
         \hspace{5pt} \href{https://youtube.com/@sujaldev}{\faYoutube}
         &
-        \href{https://sujal.dev/}{\textbf{\Huge Sujal Singh}}
+        \href{https://sujal.dev/}{\textbf{\huge Sujal Singh}}
         \\
         \href{mailto:contact@sujal.dev}{\texttt{contact@sujal.dev}}
         \\ \\
@@ -54,47 +55,58 @@
             I have made
             \href{https://github.com/mitmproxy/mitmproxy/commits?author=sujaldev}{\color{blue}several contributions} to
             \href{https://github.com/mitmproxy/mitmproxy}{\color{blue}mitmproxy}, an
-            interactive TLS-capable intercepting HTTP proxy. Notable contributions:
+            interactive TLS-capable intercepting HTTP proxy.
             \begin{itemize}[nosep,left=0pt..1em]
                 \item Fixed a bug that would tremendously slow down download speeds for HTTP/2 connections, yielding
                 a 10x increase for most cases.
                 \href{https://github.com/mitmproxy/mitmproxy/pull/7317}{\color{blue}[\#7317]}
+                \item Resolved bugs in HTTP and DNS flow handling, as well as in the terminal and web interfaces.
+            \end{itemize}
+
+            % -------------------------------------------------------------------------------------------------------- %
+            \item \textbf{Mozilla Firefox}\\
+            \begin{itemize}[nosep,left=0pt..1em]
+                \item Fixed a UI styling issue in the \texttt{about:addons} page.
+                \href{https://bugzilla.mozilla.org/show_bug.cgi?id=1984872}{\color{blue} [\#1984872]}
             \end{itemize}
 
             % -------------------------------------------------------------------------------------------------------- %
 
             \item \textbf{Skylon}\\
             \href{https://github.com/sujaldev/skylon}{\color{blue}Skylon} is a web browser rendering engine
-            written entirely from scratch which implements an HTML parser, a CSS parser and a rendering pipeline.
+            written entirely from scratch in Python.
+            \begin{itemize}[nosep,left=0pt..1em]
+                \item Implemented an HTML parser, a basic CSS parser, and a lightweight rendering pipeline for layout
+                and drawing.
+            \end{itemize}
 
             % -------------------------------------------------------------------------------------------------------- %
 
-            \item \textbf{ACT Fibernet}\newline
-            Rewarded 10k INR for reporting a severe flaw in the implementation of the ISP's intranet firewall rules.
-            \href{https://pdf.sujal.dev/act/report.pdf}{\color{blue} Read report}
+            \item \textbf{ACT Fibernet Vulnerability Disclosure}\newline
+            Discovered and
+            \href{https://pdf.sujal.dev/act/report.pdf}{\color{blue} reported}
+            a firewall misconfiguration in my ISP's internal customer network that allowed cross-customer access to
+            hosts behind a carrier-grade NAT, receiving a \rupee 10,000 bounty.
 
             % -------------------------------------------------------------------------------------------------------- %
 
-            \item \textbf{Delhi Police -- Cybersecurity Hackathon}\newline
-            Secured first position and a reward of 12k INR for developing a filter that actively prevents any client
-            device from accessing potentially malicious URLs. For proxying traffic, the wireguard mode in mitmproxy
-            was used and filtering logic is injected via a mitmproxy addon.
-            \href{https://github.com/sujaldev/cerberus}{\color{blue}Source Code}
-
-            % -------------------------------------------------------------------------------------------------------- %
-
-            \item \textbf{3D Printer}\\
-            Won second prize in a science fair for building a 3D printer.\ Currently migrating this printer to a core-xy
-            motion system for which I'm designing the parts from scratch for fun.
-            \href{https://github.com/xserv-labs/cad}{\color{blue}Source Repository}.
+            \item \textbf{Delhi Police -- Cybersecurity Hackathon (1st place)}\newline
+%            Secured first position and a reward of 12k INR for developing a filter that actively prevents any client
+%            device from accessing potentially malicious URLs. For proxying traffic, the wireguard mode in mitmproxy
+%            was used and filtering logic is injected via a mitmproxy addon.
+            Built a real-time URL-filtering proxy using mitmproxy’s WireGuard mode to intercept and block malicious
+            domains.\ Won first place and a \rupee 12,000 award in the Delhi Police cybersecurity hackathon.
 
             % -------------------------------------------------------------------------------------------------------- %
 
             \item \textbf{Home Server}\\
-            My sibling and I maintain several home servers: a firewall, two virtualization nodes running proxmox which
-            serve various purposes including network storage, media management, 3D printer firmware and more, and a
-            Raspberry Pi running KVM over IP for remote management.
-            \href{https://github.com/xserv-labs}{\color{blue}Related Repositories}.\
+            I maintain several home servers, including a firewall, two virtualization nodes running proxmox, and a
+            Raspberry Pi used for KVM-over-IP.
+
+            % -------------------------------------------------------------------------------------------------------- %
+
+            \item \textbf{3D Printer}\\
+            Built a custom 3D printer from scratch, which I'm currently redesigning to use a core-XY motion system.
         \end{itemize}
         \\
         % ------------------------------------------------------------------------------------------------------------ %
@@ -103,7 +115,7 @@
         \textsc{\large Skills} &
         \vspace*{-1.5\topsep}
         \begin{itemize}[topsep=0pt,leftmargin=15pt]
-            \item \textbf{Languages:} Proficient in Python.\ Familiar with \LaTeX, HTML/CSS, JavaScript, Bash.
+            \item \textbf{Languages:} Proficient in Python.\ Familiar with C, HTML/CSS/JavaScript, Bash.
             \item \textbf{Others:} Git, Docker, Linux Administration.
         \end{itemize}
         \\
